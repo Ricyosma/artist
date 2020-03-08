@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome{% endblock %}
+
+
+
+{% block body %}
+    <h1>Aankomende optredens</h1>
+    <p>Hier onder ziet u de aankomende optredens die er komen. Vragen? Neem contact op</p>
+    <table class="table">
+        <tbody>
+    <tr>
+            <th>Artiest</th>
+            <th>Datum</th>
+    </tr>
+    <tr>
+
+        {% for Optreden in Optreden %}
+            <td>{{ Optreden.artiestId }}</td>
+             <td>{{ Optreden.datum ? Optreden.datum|date('Y-m-d') : '' }}</td>
+    </tr>
+        {% endfor %}
+
+        <tbody>
+    </table>
+{% endblock %}
