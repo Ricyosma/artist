@@ -16,15 +16,14 @@ class ContactController extends AbstractController
     public function index(Request $request, \Swift_Mailer $mailer)
     {
         $form = $this->createForm(ContactType::class);
+
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()){
+
             $contactFormData = $form->getData();
-            {
+
                 $form = $this->createForm(ContactType::class);
-
-
-                $this->addFlash('yay', 'Contact email verzonden');
 
 
                 $message = (new \Swift_Message('New e-mail :)'))
@@ -35,10 +34,16 @@ class ContactController extends AbstractController
                         'text/plain'
                     );
                 $mailer->send($message);
+
+            $this->addFlash('yay', 'Contact email verzonden');
+
+            return $this->redirectToRoute('contact');
+
+
             }
             return $this->render('contact/contact.html.twig', [
                 'contact_form' => $form->createView()
             ]);
         }
     }
-}
+
