@@ -23,13 +23,13 @@ class ContactController extends AbstractController
 
             $contactFormData = $form->getData();
 
-                $form = $this->createForm(ContactType::class);
 
+                $form = $this->createForm(ContactType::class);
 
                 $message = (new \Swift_Message('New e-mail :)'))
                     ->setFrom($contactFormData['from'])
-                    ->setTo($contactFormData['from'])
-                    ->setTo('email@email.com')
+                    ->setTo('emai@email.com')
+                    ->setCC($contactFormData['from'])
                     ->setBody(
                         $contactFormData['message'],
                         'text/plain'
