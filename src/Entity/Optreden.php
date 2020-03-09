@@ -28,7 +28,7 @@ class Optreden
     private $datum;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="datetime")
      */
     private $aanvang;
 
