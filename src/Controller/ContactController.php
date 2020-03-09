@@ -28,6 +28,7 @@ class ContactController extends AbstractController
 
                 $message = (new \Swift_Message('New e-mail :)'))
                     ->setFrom($contactFormData['from'])
+                    ->setTo($contactFormData['from'])
                     ->setTo('email@email.com')
                     ->setBody(
                         $contactFormData['message'],
