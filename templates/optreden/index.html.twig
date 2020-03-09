@@ -24,7 +24,7 @@
                 <td>{{ optreden.id }}</td>
                 <td>{{ optreden.artiestId }}</td>
                 <td>{{ optreden.datum ? optreden.datum|date('Y-m-d') : '' }}</td>
-                <td>{{ optreden.aanvang }}</td>
+                <td>{{ optreden.aanvang ? optreden.aanvang|date('h:i:m') : ''  }}</td>
                 <td>{{ optreden.zaal }}</td>
                 <td>{{ optreden.maxSeats }}</td>
                 <td>

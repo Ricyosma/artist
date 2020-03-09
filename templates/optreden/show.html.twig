@@ -17,7 +17,7 @@
             </tr>
             <tr>
                 <th>Aanvang</th>
-                <td>{{ optreden.aanvang }}</td>
+                <td>{{ optreden.aanvang ? optreden.aanvang|date('h:i:m') : ''  }}</td>
             </tr>
             <tr>
                 <th>Zaal</th>

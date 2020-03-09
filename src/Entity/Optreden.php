@@ -73,14 +73,15 @@ class Optreden
         return $this;
     }
 
-    public function getAanvang(): ?string
+    public function getAanvang(): ?\DateTimeInterface
     {
         return $this->aanvang;
     }
 
-    public function setAanvang(string $aanvang): self
+    public function setAanvang(\DateTimeInterface $aanvang): self
     {
         $this->aanvang = $aanvang;
+        $aanvang->format('h:i:m');
 
         return $this;
     }
