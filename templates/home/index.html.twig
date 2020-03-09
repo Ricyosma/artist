@@ -12,12 +12,14 @@
     <tr>
             <th>Artiest</th>
             <th>Datum</th>
+            <th>Aanvang</th>
     </tr>
     <tr>
 
         {% for Optreden in Optreden %}
             <td>{{ Optreden.artiestId }}</td>
              <td>{{ Optreden.datum ? Optreden.datum|date('Y-m-d') : '' }}</td>
+             <td>{{ Optreden.aanvang ? Optreden.aanvang|date('h:i:m') : '' }}</td>
     </tr>
         {% endfor %}
 
